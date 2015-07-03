@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div>
+    <table id="calculator">
+      <tr>
+        <td colspan="5">
+          <input id="inputBox" type = "text" name = "calculatorInput"/>
+        </td>
+      </tr>
+      <tr>
+        <td><input class="calcButton" type="button" value="1"></td>
+        <td><input class="calcButton" type="button" value="2"></td>
+        <td><input class="calcButton" type="button" value="3"></td>
+        <td><input class="calcButton" type="button" value="+"></td>
+        <td><input type="button" value="M+" onclick="mp()"></td>
+      </tr>
+      <tr>
+        <td><input class="calcButton" type="button" value="4"></td>
+        <td><input class="calcButton" type="button" value="5"></td>
+        <td><input class="calcButton" type="button" value="6"></td>
+        <td><input class="calcButton" type="button" value="-"></td>
+        <td><input type="button" value="MS" onclick="ms()"></td>
+      </tr>
+      <tr>
+        <td><input class="calcButton" type="button" value="7"></td>
+        <td><input class="calcButton" type="button" value="8"></td>
+        <td><input class="calcButton" type="button" value="9"></td>
+        <td><input class="calcButton" type="button" value="/"></td>
+        <td><input type="button" value="MR" onclick="mr()"></td>
+      </tr>
+      <tr>
+        <td><input class="calcButton" type="button" value="."></td>
+        <td><input class="calcButton" type="button" value="0"></td>
+        <td><input class="equals" type="button" value="=" onclick="calculate()"></td>
+        <td><input class="calcButton" type="button" value="*"></td>
+        <td><input type="button" value="MC" onclick="mc()"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="CLS" onclick="clearInput()"></td>
+        <td><input type="button" value="&#8592" onclick="backspace()"></td>
+        <td><input class="calcButton" type="button" value="("></td>
+        <td><input class="calcButton" type="button" value=")"></td>
+        <td><input class="calcButton" type="button" value="^"></td>
+      </tr>
+    </table>
+  </div>
+    <script src="js/calcFunctions.js"></script>
+  </body>
+</html>

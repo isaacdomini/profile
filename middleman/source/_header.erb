@@ -1,0 +1,62 @@
+<header data-0="background-position:0px 0px;" data-500="background-position:0px 200px;">
+
+  <div class="container">
+    <div class="columns sixteen">
+      <h1>Title</h1>
+      Cyriac Thundathil
+    </div><!--/ columns-->
+  </div><!--/ container-->
+</header><!--/ band
+<script>
+  //Array of images which you want to show: Use path you want.
+  var images=new Array('Assets/BGImages/head_sandwichman1.jpg','Assets/BGImages/head_sandwichman2.jpg','Assets/BGImages/head_sandwichman3.jpg');
+  var nextimage=0;
+  doSlideshow();
+
+  function doSlideshow(){
+   if(nextimage>=images.length){nextimage=0;}
+   $('.global-header')
+   document.getElementById("header").style.backgroundImage = 'url("'+images[nextimage++]+'")';
+
+  }
+</script>-->
+<script type="text/javascript">
+var continueSlideShow = true;
+var images = new Array();
+images[0] = 'http://ibadaninternationalschool.com/images/banners/slide-1.jpg';
+images[1] = 'http://ibadaninternationalschool.com/images/banners/slide-2.jpg';
+images[2] = 'http://ibadaninternationalschool.com/images/banners/slide-3.jpg';
+images[3] = 'http://ibadaninternationalschool.com/images/banners/slide-4.jpg';
+images[4] = 'http://ibadaninternationalschool.com/images/banners/slide-5.jpg';
+function slideShow(i) {
+  if (continueSlideShow){
+    document.querySelector("header").style.background = 'url("'+images[i]+'")';
+    document.querySelector("header").style.backgroundSize = '100%';
+    i++;
+    console.log("image" + i);
+    if( i > (images.length - 1) ) { i = 0; }
+    setTimeout('slideShow('+i+')',10000);
+  }
+  else {
+    return;
+  }
+}
+function headerBackgroundWidthCheck(){
+  if($(window).width()>413) {
+    i=0;
+    slideShow(i);
+    console.log('>413');
+    continueSlideShow = true;
+  }
+  else {
+    document.querySelector("header").style.background = 'orange';
+    console.log('<413');
+    continueSlideShow = false;
+  }
+}
+headerBackgroundWidthCheck();
+$(window).resize(function() {
+  console.log('window was resized');
+  headerBackgroundWidthCheck();
+});
+</script>

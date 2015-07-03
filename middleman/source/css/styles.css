@@ -1,0 +1,17 @@
+/*media imports for larger screens*/
+@media only screen and (min-width: 951px) {
+  header {
+    margin: auto;
+    width: 951px;
+  }
+}
+@media only screen and (max-width: 413px) {
+  header {
+    background-color: orange;
+  }
+}
+header{
+    color: white;
+    text-align: center;
+    padding: 5% 0 5% 0;
+}
