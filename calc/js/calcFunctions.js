@@ -1,3 +1,4 @@
+var memory =0;
 var buttons = document.getElementsByClassName('calcButton');
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
@@ -7,10 +8,6 @@ for (var i = 0; i < buttons.length; i++) {
 function backspace(){
   var str = document.getElementById('inputBox').value
   document.getElementById('inputBox').value = str.substring(0,str.length-1)
-}
-
-function memoryVariable(){
-  memory=0;
 }
 
 /*
@@ -166,7 +163,7 @@ function ms() {
   memory = document.getElementById('inputBox').value;
 }
 function mp() {
-  evalu();
+  calculate();
   memory = Number(memory) + Number(document.getElementById('inputBox').value);
   document.getElementById('inputBox').value = memory
 }
