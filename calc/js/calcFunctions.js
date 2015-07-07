@@ -1,4 +1,3 @@
-var memory = 0;
 var buttons = document.getElementsByClassName('calcButton');
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
@@ -10,6 +9,9 @@ function backspace(){
   document.getElementById('inputBox').value = str.substring(0,str.length-1)
 }
 
+function memoryVariable(){
+  memory=0;
+}
 
 /*
 *Gets an arithmentic equation without parenthesis
@@ -160,7 +162,7 @@ function clearInput(){document.getElementById("inputBox").value = ""; }
 function mc() {memory = 0;}
 function mr() {document.getElementById('inputBox').value += memory; }
 function ms() {
-  evalu();
+  calculate();
   memory = document.getElementById('inputBox').value;
 }
 function mp() {
