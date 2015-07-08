@@ -1,4 +1,5 @@
 var memory =0;
+
 var buttons = document.getElementsByClassName('calcButton');
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
