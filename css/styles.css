@@ -25,6 +25,7 @@ header{
     position:relative;
     margin-top: 10vh;
     z-index: 998;
+    font-size: 6em;
 }
 #cmenu{
     width: 100%;
