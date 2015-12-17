@@ -1,5 +1,5 @@
 $(window).scroll(function () {
-if( $(window).scrollTop() > $('#cmenu').offset().top && !($('#cmenu').hasClass('csticky'))){
+if( $(window).scrollTop() > $('#cheader').height() && !($('#cmenu').hasClass('csticky'))){
 $('#cmenu').addClass('csticky');
 } else if ($(window).scrollTop() < $('#cheader').height()){
 $('#cmenu').removeClass('csticky');
