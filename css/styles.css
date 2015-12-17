@@ -4,12 +4,10 @@ body {
   flex-direction: column;
   margin: 0px 0px 0px 0px;
   font-family: 'Roboto', sans-serif;
-
 }
 main {
   flex: 1 0 auto;
 }
-
 header{
     background-image: url(../images/back01.jpg);
     background-size:     cover;
@@ -17,7 +15,6 @@ header{
     background-position: center center;
     color: white;
 }
-
 #cheader{
     width: 100%;
     height: 90vh;
@@ -25,7 +22,7 @@ header{
     position:relative;
     margin-top: 10vh;
     z-index: 998;
-    font-size: 6em;
+    text-align:center;
 }
 #cmenu{
     width: 100%;
@@ -35,9 +32,24 @@ header{
     top:0;
     z-index: 999;
     font-size: 2em;
-    font-weight: bold;
     background: rgba(0,0,0,0.5);
 }
 #ccontainer{
     margin-top: 50px;
+}
+footer{
+  min-height0vh;:20vh;
+  background-color: red;
+}
+#cheader h1 {
+  font-size: 6em;
+  font-weight: lighter;
+}
+#cheader p{
+  font-size: 2em;
+}
+#cheadcont{
+  display: table-cell;
+  height: 90vh;
+  vertical-align: middle;
 }
