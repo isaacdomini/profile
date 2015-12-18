@@ -1,6 +1,7 @@
 var lastId,
     topMenu = $("#cmenu"),
     topMenuHeight = topMenu.outerHeight(),
+    windowHeight = $(window).outerHeight(),
     // All list items
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
@@ -13,7 +14,7 @@ var lastId,
 // so we can get a fancy scroll animation
 menuItems.click(function(e){
   var href = $(this).attr("href"),
-      o = href === "#" ? 0 : $(href).offset().top-topMenuHeight+15;
+      o = href === "#" ? 0 : $(href).offset().top-topMenuHeight;
   $('html, body').stop().animate({
       scrollTop: o
   }, 300);
@@ -23,7 +24,7 @@ menuItems.click(function(e){
 // Bind to scroll
 $(window).scroll(function(){
    // Get container scroll position
-   var fromTop = $(this).scrollTop()+topMenuHeight;
+   var fromTop = $(this).scrollTop()+topMenuHeight+(windowHeight/2);
 
    // Get id of current scroll item
    var cur = scrollItems.map(function(){

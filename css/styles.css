@@ -82,18 +82,15 @@ footer{
   background-color: lightGrey;
   color: #333;
   transition: all 0.2s;
-  border-bottom: 0.1em solid black;
 }
 #cmenu .citems li.active a{
   background-color: #222;
-  border-bottom: 0.1em solid #222;
   transition: all 0.2s;
 }
 #cmenu .citems li.active a:hover{
   background-color: lightGrey;
   color: #333;
   transition: all 0.2s;
-  border-bottom: 0.1em solid black;
 }
 #cmenu .clogo{
   float:left;
@@ -103,4 +100,10 @@ footer{
   /*border-color: black;
   padding-top: 20vh;
   border:10px;*/
+}
+@media screen and (max-width: 992px) {
+    #cmenu .citems{
+      visibility: hidden;
+      display: none;
+    }
 }
