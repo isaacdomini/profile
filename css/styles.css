@@ -26,13 +26,13 @@ header{
 }
 #cmenu{
     width: 100%;
-    height: 10vh;
     position:fixed;
     margin-top: 0;
     top:0;
     z-index: 999;
     font-size: 2em;
     background: rgba(0,0,0,0.5);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4)
 }
 #ccontainer{
     margin-top: 50px;
@@ -45,11 +45,62 @@ footer{
   font-size: 6em;
   font-weight: lighter;
 }
-#cheader p{
+#cheader p{nd with it I use LessHat, that let’s me w
   font-size: 2em;
 }
 #cheadcont{
   display: table-cell;
   height: 90vh;
   vertical-align: middle;
+}
+#cmenu .citems{
+  float:right;
+  width:50vw;
+}
+#cmenu .citems ul{
+  margin-before: 0px;
+  margin-after:0px;
+  padding-start: 0px;
+  -webkit-margin-after:0px;
+  -webkit-margin-before: 0px;
+  -webkit-padding-start: 0px;
+  text-align: right;
+  padding: 0.5em;
+}
+#cmenu .citems li{
+  display: inline-block;
+  list-style-type: none;
+  padding-right: 10px;
+}
+#cmenu .citems li a{
+  color: white;
+  text-decoration: none;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+#cmenu .citems li a:hover{
+  background-color: lightGrey;
+  color: #333;
+  transition: all 0.2s;
+  border-bottom: 0.1em solid black;
+}
+#cmenu .citems li.active a{
+  background-color: #222;
+  border-bottom: 0.1em solid #222;
+  transition: all 0.2s;
+}
+#cmenu .citems li.active a:hover{
+  background-color: lightGrey;
+  color: #333;
+  transition: all 0.2s;
+  border-bottom: 0.1em solid black;
+}
+#cmenu .clogo{
+  float:left;
+}
+.section{
+  height:100vh;
+  /*border-color: black;
+  padding-top: 20vh;
+  border:10px;*/
 }
