@@ -1,19 +1,24 @@
-(function() {
-
-  "use strict";
-
-  var toggle = document.querySelector(".chamburger");
-
+var cdrop = document.querySelector('.cdropdown');
+cdrop.style.display = 'none';
+var toggle = document.querySelector(".chamburger");
 toggleHandler(toggle);
+function toggleMenu(){
+  (toggle.classList.contains("is-active") === true) ? toggle.classList.remove("is-active") : toggle.classList.add("is-active");
+  (cdrop.style.display == 'none') ? cdrop.style.display = 'block' : cdrop.style.display = 'none';
+}
 function toggleHandler(toggle) {
   toggle.addEventListener( "click", function(e) {
     e.preventDefault();
-    (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+    toggleMenu();
   });
-
 }
-
-})();
+var menuItems = cdrop.querySelectorAll('.item');
+for (var i = menuItems.length - 1; i>=0; i--){
+  menuItems[i].addEventListener("click",function(e){
+      e.preventDefault();
+      toggleMenu();
+  });
+}
 var lastId,
     topMenu = $("#cmenu"),
     topMenuHeight = topMenu.outerHeight(),
