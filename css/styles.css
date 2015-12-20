@@ -167,14 +167,14 @@ footer{
 }
 
 .chamburger span::before {
-  top: -20px;
+  top: -12px;
 }
 
 .chamburger span::after {
-  bottom: -20px;
+  bottom: -12px;
 }
 .chamburger--htx {
-  background-color: #ff3264;
+  background-color: rgba(187,0,0,0.5);
 }
 
 .chamburger--htx span {
@@ -197,7 +197,7 @@ footer{
 
 /* active state, i.e. menu open */
 .chamburger--htx.is-active {
-  background-color: #cb0032;
+  background-color: rgba(102,102,102,0.5);
 }
 
 .chamburger--htx.is-active span {
