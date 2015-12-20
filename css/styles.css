@@ -96,6 +96,9 @@ footer{
 #cmenu .clogo{
   float:left;
 }
+#cmenu .chamburger{
+  float: right;
+}
 .section{
   height:100vh;
   /*border-color: black;
@@ -107,4 +110,14 @@ footer{
       visibility: hidden;
       display: none;
     }
+}
+
+@media screen and (min-width: 992px) {
+    #cmenu .chamburger{
+      visibility: hidden;
+      display: none;
+    }
+}
+footer{
+  heigth: 25vh;
 }
