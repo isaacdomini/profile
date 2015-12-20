@@ -10,6 +10,7 @@ main {
 }
 header{
     background-image: url(../images/back01.jpg);
+    background: rgba(100,0,0,0.7)
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;
@@ -120,8 +121,36 @@ footer{
       display: none;
     }
 }
+
+#cmenu .cdropdown{
+  width: 100%;
+  position:fixed;
+  margin-top: 70px;
+  z-index: 10000;
+  font-size: 0.7em;
+  background: rgba(0,0,0,0);
+  float:right;
+  padding-right: 70px;
+}
+
 footer{
   heigth: 25vh;
+}
+
+
+#cmenu .cdropdown a.item {
+  height:30px;
+  min-width:50vw;
+  background-color: rgba(1, 1, 1, 0.5);
+  display: inline-block;
+  float: right;
+  color: white;
+  text-decoration: none;
+  padding: 0.7em;
+  text-align: center;
+}
+#cmenu .cdropdown a.item:hover {
+  background-color: rgba(1,0,0, 0.5);
 }
 
 

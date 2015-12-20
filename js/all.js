@@ -2,19 +2,16 @@
 
   "use strict";
 
-  var toggles = document.querySelectorAll(".chamburger");
+  var toggle = document.querySelector(".chamburger");
 
-  for (var i = toggles.length - 1; i >= 0; i--) {
-    var toggle = toggles[i];
-    toggleHandler(toggle);
-  };
+toggleHandler(toggle);
+function toggleHandler(toggle) {
+  toggle.addEventListener( "click", function(e) {
+    e.preventDefault();
+    (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+  });
 
-  function toggleHandler(toggle) {
-    toggle.addEventListener( "click", function(e) {
-      e.preventDefault();
-      (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-    });
-  }
+}
 
 })();
 var lastId,
