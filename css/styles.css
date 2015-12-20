@@ -105,14 +105,14 @@ footer{
   padding-top: 20vh;
   border:10px;*/
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 972px) {
     #cmenu .citems{
       visibility: hidden;
       display: none;
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 973px) {
     #cmenu .chamburger{
       visibility: hidden;
       display: none;
