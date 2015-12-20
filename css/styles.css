@@ -41,17 +41,18 @@ footer{
   min-height0vh;:20vh;
   background-color: red;
 }
+#cheader{
+}
 #cheader h1 {
   font-size: 6em;
   font-weight: lighter;
 }
-#cheader p{nd with it I use LessHat, that let’s me w
+#cheader p{
   font-size: 2em;
 }
 #cheadcont{
-  display: table-cell;
   height: 90vh;
-  vertical-align: middle;
+
 }
 #cmenu .citems{
   float:right;
@@ -95,6 +96,7 @@ footer{
 }
 #cmenu .clogo{
   float:left;
+  transform: translate(50%,50%);
 }
 #cmenu .chamburger{
   float: right;
@@ -139,7 +141,7 @@ footer{
   border-radius: none;
   border: none;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.1s;
 }
 
 .chamburger:focus {
@@ -178,13 +180,13 @@ footer{
 }
 
 .chamburger--htx span {
-  transition: background 0s 0.3s;
+  transition: background 0s 0.1s;
 }
 
 .chamburger--htx span::before,
 .chamburger--htx span::after {
-  transition-duration: 0.3s, 0.3s;
-  transition-delay: 0.3s, 0s;
+  transition-duration: 0.1s, 0.1s;
+  transition-delay: 0.1s, 0s;
 }
 
 .chamburger--htx span::before {
@@ -216,6 +218,6 @@ footer{
 
 .chamburger--htx.is-active span::before,
 .chamburger--htx.is-active span::after {
-  transition-delay: 0s, 0.3s;
+  transition-delay: 0s, 0.1s;
 }
 /*END chamburger */
