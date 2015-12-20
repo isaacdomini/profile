@@ -79,17 +79,18 @@ footer{
   box-sizing: border-box;
 }
 #cmenu .citems li a:hover{
-  background-color: lightGrey;
+  background-color: rgba(187,0,0,0.5);
   color: #333;
   transition: all 0.2s;
 }
 #cmenu .citems li.active a{
-  background-color: #222;
+  background-color: rgba(102,102,102,0.5);
   transition: all 0.2s;
+  color: #bb0000;
 }
 #cmenu .citems li.active a:hover{
-  background-color: lightGrey;
-  color: #333;
+  background-color: rgba(102,102,102,0.5);
+  color: #bb0000;
   transition: all 0.2s;
 }
 #cmenu .clogo{
