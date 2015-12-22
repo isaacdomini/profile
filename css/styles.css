@@ -10,7 +10,7 @@ main {
 }
 header{
     background-image: url(../images/back00.jpg);
-    background: rgba(100,0,0,0.7)
+    /*background: rgba(100,0,0,0.7)*/
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;
