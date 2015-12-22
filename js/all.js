@@ -1,10 +1,25 @@
 var cdrop = document.querySelector('.cdropdown');
-cdrop.style.display = 'none';
+var cdropmenu = $("#cdropmenu");
+var menuWidth = cdropmenu.outerWidth();
+cdropmenu.css({
+  right : '-'+menuWidth+'px'
+});
+console.log(menuWidth);
 var toggle = document.querySelector(".chamburger");
 toggleHandler(toggle);
 function toggleMenu(){
   (toggle.classList.contains("is-active") === true) ? toggle.classList.remove("is-active") : toggle.classList.add("is-active");
-  (cdrop.style.display == 'none') ? cdrop.style.display = 'block' : cdrop.style.display = 'none';
+  if (cdrop.style.right == '0px') {
+    cdropmenu.animate({
+      right : '-'+menuWidth+'px'
+    });
+    console.log("test0");
+  }else{
+    cdropmenu.animate({
+      right : '0px'
+    });
+    console.log("test2");
+  }
 }
 function toggleHandler(toggle) {
   toggle.addEventListener( "click", function(e) {
