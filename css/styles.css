@@ -13,6 +13,8 @@ header{
 }
 footer{
   padding: 20px;
+  min-height :20vh;
+  background-color: #FF5252;
 }
 #cheader{
     width: 100%;
@@ -35,10 +37,6 @@ footer{
 }
 #ccontainer{
     margin-top: 50px;
-}
-footer{
-  min-height0vh;:20vh;
-  background-color: red;
 }
 #cheader{
 }
@@ -134,11 +132,6 @@ footer{
   z-index: 900;
   right : 1000px;
 }
-
-footer{
-  heigth: 25vh;
-}
-
 
 #cmenu .cdropdown a.item {
   height:30px;
