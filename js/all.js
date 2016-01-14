@@ -11,7 +11,7 @@ function toggleMenu(){
   (toggle.classList.contains("is-active") === true) ? toggle.classList.remove("is-active") : toggle.classList.add("is-active");
   if (cdrop.style.right == '0px') {
     cdropmenu.animate({
-      right : '-'+menuWidth+'px'
+      right : '-'+cdropmenu.outerWidth()+'px'
     });
     console.log("test0");
   }else{
@@ -79,3 +79,11 @@ $(window).scroll(function(){
          .end().filter("[href=#"+id+"]").parent().addClass("active");
    }
 });
+
+$(window).resize(function(){
+  if(cdrop.style.right != '0px'){
+    cdropmenu.animate({
+      right : '-'+cdropmenu.outerWidth()+'px'
+    });
+  }
+}); 
