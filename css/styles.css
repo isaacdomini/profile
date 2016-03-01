@@ -31,13 +31,22 @@ footer{
   right:10px;
 }
 #cheader{
-    width: 100%;
-    height: 90vh;
     top: 0;
     position:relative;
     margin-top: 10vh;
     z-index: 9;
-    text-align:center;
+    height: 100vh;
+    width: 100%;
+    margin: 0; padding: 0;
+    display: table;
+}
+#cheaderflex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 #cmenu{
     width: 100%;
