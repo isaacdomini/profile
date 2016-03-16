@@ -1,10 +1,10 @@
-$('#cgoup').on("click",function(){
+$('#cupimg').on("click",function(){
   $('html, body').animate({scrollTop:0},'slow');
 });
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
     if(scroll < 10){
-      $('#cgoup').hide();
+      $('#cgoup').animate($('#cgoup').hide());
     }else{
       $('#cgoup').show();
     }
