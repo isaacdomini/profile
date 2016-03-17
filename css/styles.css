@@ -22,6 +22,8 @@ footer{
   background-color: #FF5252;
 }
 #cgoup{
+  display: none;
+  align:center;
   position: fixed;
   z-index:10000;
   width: 70px;

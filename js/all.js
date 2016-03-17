@@ -18,6 +18,7 @@ cdropmenu.css({
 console.log(menuWidth);
 var toggle = document.querySelector(".chamburger");
 toggleHandler(toggle);
+
 function toggleMenu(){
   (toggle.classList.contains("is-active") === true) ? toggle.classList.remove("is-active") : toggle.classList.add("is-active");
   if (cdrop.style.right == '0px') {
@@ -32,12 +33,14 @@ function toggleMenu(){
     console.log("test2");
   }
 }
+
 function toggleHandler(toggle) {
   toggle.addEventListener( "click", function(e) {
     e.preventDefault();
     toggleMenu();
   });
 }
+
 var menuItems = cdrop.querySelectorAll('.item');
 for (var i = menuItems.length - 1; i>=0; i--){
   menuItems[i].addEventListener("click",function(e){
