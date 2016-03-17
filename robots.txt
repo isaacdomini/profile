@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /font/
+Disallow: /css/
+Disallow: /images/
+Disallow: /js/
+Disallow: /minify.rb
+Disallow: /CNAME
