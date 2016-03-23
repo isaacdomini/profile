@@ -1,0 +1,35 @@
+<birthdays id="1">
+  <month id="1">
+  </month>
+  <month id="2">
+    <day id="23">
+      <person name="Someone2"/>
+    </day>
+  </month>
+  <month id="3">
+    <day id="23">
+      <person name="Someone3"/>
+    </day>
+  </month>
+  <month id="4">
+  </month>
+  <month id="5">
+  </month>
+  <month id="6">
+  </month>
+  <month id="7">
+  </month>
+  <month id="8">
+  </month>
+  <month id="9">
+    <day id="29">
+      <person name="Cyriac"/>
+    </day>
+  </month>
+  <month id="10">
+  </month>
+  <month id="11">
+  </month>
+  <month id="12">
+  </month>
+</birthdays>
