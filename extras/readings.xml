@@ -1,46 +1,44 @@
 <readings>
   <day0>
-    <reading1>Isa+60:1-7</reading1>
-    <reading2>1Sam+2:1-10</reading2>
-    <reading3>Rom+6:1-14</reading3>
-    <gospel>Matt+28:1-6 </gospel>
+    <reading1 content="Isa+60:1-7"></reading1>
+    <reading2 content="1Sam+2:1-10"></reading2>
+    <reading3 content="content="Rom+6:1-14"></reading3>
+    <gospel content="Matt+28:1-6 "></gospel>
   </day0>
   <day1>
-    <reading1>isa+60:15-22</reading1>
-    <reading2>Acts+2:29-36</reading2>
-    <reading3>Rom+4:1-8</reading3>
-    <gospel>John+14:18-28</gospel>
+    <reading1 content="isa+60:15-22"></reading1>
+    <reading2 content="Acts+2:29-36"></reading2>
+    <reading3 content="Rom+4:1-8"></reading3>
+    <gospel>John+14:18-28"></gospel>
   </day1>
   <day2>
-    <reading1>Isa+61:1-9</reading1>
-    <reading2>Acts+2:37-47</reading2>
-    <reading3>1Cor+15:12-19</reading3>
-    <gospel>Luke+24:13-27</gospel>
+    <reading1 content="Isa+61:1-9"></reading1>
+    <reading2 content="Acts+2:37-47"></reading2>
+    <reading3 content="1Cor+15:12-19"></reading3>
+    <gospel content="Luke+24:13-27"></gospel>
   </day2>
   <day3>
-    <reading1>Isa+61:10-Isa+62:</reading1>
-    <reading2>Acts+4:23-31</reading2>
-    <reading3>Eph+4:1-6</reading3>
-    <gospel>John+15:1-10</gospel>
+    <reading1 content="Isa+61:10-Isa+62:"></reading1>
+    <reading2 content="Acts+4:23-31"></reading2>
+    <reading3 content="Eph+4:1-6"></reading3>
+    <gospel content="John+15:1-10"></gospel>
   </day3>
   <day4>
-    <reading1>Isa+54:1-10 </reading1>
-    <reading2>Acts+6:1-7</reading2>
-    <reading3>Col+2:12-15 </reading3>
-    <gospel>Matt+10:1-15</gospel>
+    <reading1 content="Isa+54:1-10 "></reading1>
+    <reading2 content="Acts+6:1-7"></reading2>
+    <reading3 content="Col+2:12-15 "></reading3>
+    <gospel content="Matt+10:1-15"></gospel>
   </day4>
   <day5>
-    <reading1>Dan+3:25-31</reading1>
-    <reading2>Acts+6:8-15</reading2>
-    <reading3>Heb+11:3-10</reading3>
-    <gospel>Matt+10:26-33</gospel>
+    <reading1 content="Dan+3:25-31"></reading1>
+    <reading2 content="Acts+6:8-15"></reading2>
+    <reading3 content="Heb+11:3-10"></reading3>
+    <gospel content="Matt+10:26-33"></gospel>
   </day5>
   <day6>
-    <reading1>Col+3:1-4</reading1>
-    <reading2></reading2>
-    <reading3></reading3>
-    <gospel>Mark+16:1-8</gospel>
+    <reading1 content="Col+3:1-4"></reading1>
+    <reading2 content=""></reading2>
+    <reading3 content=""></reading3>
+    <gospel content="Mark+16:1-8"></gospel>
   </day6>
 </readings>
-https://bibles.org/v2/passages.xml?q[]=john+3:1-5&version=eng-KJVA
- content="1"
