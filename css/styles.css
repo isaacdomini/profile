@@ -40,6 +40,9 @@ footer{
   padding: 5px 5px 5px 5px;
   width:100%;
 }
+a{
+  color: white !important
+}
 #cheader{
     top: 0;
     position:relative;
@@ -49,6 +52,7 @@ footer{
     width: 100%;
     margin: 0; padding: 0;
     display: table;
+    background: rgba(0,0,0,0.7);
 }
 #cheaderflex{
   display: flex;
