@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/cyriac
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://cyriacdomini.com
+  * I am cyriac (https://keybase.io/cyriac) on keybase.
+  * I have a public key with fingerprint CBAA BDF1 3A8D AAAD 6B0F  C544 E55C F6A0 72EF 7967
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101047b88fe295176a8d6f83b1bd5228d7ea531ff91621404e0e3d3a4deb6e800270a",
+            "fingerprint": "cbaabdf13a8daaad6b0fc544e55cf6a072ef7967",
+            "host": "keybase.io",
+            "key_id": "e55cf6a072ef7967",
+            "kid": "0101047b88fe295176a8d6f83b1bd5228d7ea531ff91621404e0e3d3a4deb6e800270a",
+            "uid": "814c1a9b5faea4bb8ee25195d92c0f19",
+            "username": "cyriac"
+        },
+        "service": {
+            "hostname": "cyriacdomini.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1478615822,
+    "expire_in": 157680000,
+    "prev": "f8a6cbd095f0c358995c362dbaa94becba42f370fc11ceb5912e760eb90d6c52",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMImAnicrVJbSBVRFB3NGyUZJoT0EepIkHCVOXPnebOiAosIr4hYmnU7jz02mjO3
+uaP5yBAxKz8seqHRR/WRP/YyiiKoDJPocen1UURgBAU9PoSKsoLOSH0Efcb5OJy9
+11pnr733WNYMITPN7tmf8bZz4VTavdHBZmFDweu5HSJxWZsY7RAbYfqCbQySfrzR
+ZmJUlBA/ik4MwwLZVJGuYYNplhEhiDBVlg2mA1YjyLJMpMlIkRSQIMIiWGFANDAk
+SdYlLIZFy3bqwUt4tuNzWUowJsxCEa6GMWYakSyqKgqoKrU0LOkyWLqp6Zy41U0G
+DF4cwUkosV0e44/4dHn/wP/nupun5QykUIRNoloYsEKIASCryFSZKVPJQmYATILn
+4CYI3LV5NqZiZ1jksRabQtDWwMdfeeY22Y5dQt0mzk54ru9SdxvPbvX9RDIasP22
+RADfAST+WyhObIfxTnJGC3hJ23XEKOJI6tuBMlJ0Q0OqIcthEVoTtgdxO0CousYd
+SVLwD7RwScvAGiVMMlVLohHVME2VRjSZ8bGYCgE+HkW2IjofCkIUiGoiGXRNAmJK
+TKOqLAbWtjuuGFV4mbieSybtegf7zR6Inbdu1mUIaZnCzFB6sGFC5uzsP3t348As
+4Ul7ds3tfhrLOwUfsmor3MWJN+82Fy4IXc+f6Lh+dPzj3Ssrv64cHFkxsOvZ847J
+9t7u2FsvVfxi0/zjO64JU7mxkcnacOmy/IKel+3lB86dd6o/53XlsYMNg5PC+tGq
+V3tLV9+5P+qP3/p5ML+478m8pmOpoT112bMblhTtu7Qo1p/KvWiVxbZcgMaRrk8N
+/cufUTi07uS33V05U5XVKw7vzKmoLKy8emZv2Z4aiiYGTPFBGLWGTldNTBZJXWO1
+d8bWzJlD03NmbBx+dGXVkYnR8aw2eWn3l+ETQ0sury13crWq2ONee/2Xj0NnQ09f
+vf9+92H6D2G4D3q/lmqnU6Hi178AChxAlg==
+=A62o
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/cyriac
+
+==================================================================
