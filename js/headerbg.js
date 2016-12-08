@@ -13,7 +13,7 @@ var nextimage=0;
 doSlideshow();
 
 function doSlideshow(){
-    if(nextimage>=8){nextimage=0;}
+    if(nextimage>=7){nextimage=0;}
     $('header')
     .css('background-image','url("images/back0'+nextimage+'.jpg")')
     .fadeIn(2000,function(){
