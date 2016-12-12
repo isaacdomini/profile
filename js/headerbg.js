@@ -8,6 +8,23 @@
 // //     color: white;
 // // }";*/
 // document.write("<style>"+style+"</style>");
+/* Pre Loading images */
+var images = new Array()
+function preload() {
+  for (i = 0; i < preload.arguments.length; i++) {
+    images[i] = new Image()
+    images[i].src = preload.arguments[i]
+  }
+}
+preload(
+  "images/back00.jpg",
+  "images/back01.jpg",
+  "images/back02.jpg",
+  "images/back03.jpg",
+  "images/back04.jpg",
+  "images/back05.jpg",
+  "images/back06.jpg"
+)
 
 var nextimage=0;
 doSlideshow();
