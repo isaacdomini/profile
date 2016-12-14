@@ -16,18 +16,20 @@ function preload() {
     images[i].src = preload.arguments[i]
   }
 }
-preload(
-  "images/back00.jpg",
-  "images/back01.jpg",
-  "images/back02.jpg",
-  "images/back03.jpg",
-  "images/back04.jpg",
-  "images/back05.jpg",
-  "images/back06.jpg"
-)
 
 var nextimage=0;
-doSlideshow();
+$(document).ready(function() {
+  preload(
+    "images/back00.jpg",
+    "images/back01.jpg",
+    "images/back02.jpg",
+    "images/back03.jpg",
+    "images/back04.jpg",
+    "images/back05.jpg",
+    "images/back06.jpg"
+  )
+  doSlideshow();
+});
 
 function doSlideshow(){
     if(nextimage>=7){nextimage=0;}
