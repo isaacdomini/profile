@@ -15,7 +15,7 @@ main {
 }
 header{
   color: white;
-  background-image: url(a.jpg);
+  background-image: url(../images/backdefault.jpg);
   transition: background 2s ease-out;
   -webkit-transition: background 2s ease-out;
   -moz-transition: background 2s ease-out;

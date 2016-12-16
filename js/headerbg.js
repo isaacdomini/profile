@@ -18,7 +18,7 @@ function preload() {
 }
 
 var nextimage=0;
-$(document).ready(function() {
+document.onload = function() {
   preload(
     "images/back00.jpg",
     "images/back01.jpg",
@@ -28,8 +28,9 @@ $(document).ready(function() {
     "images/back05.jpg",
     "images/back06.jpg"
   )
-  doSlideshow();
-});
+}
+
+window.onload = doSlideshow;
 
 function doSlideshow(){
     if(nextimage>=7){nextimage=0;}
@@ -38,7 +39,7 @@ function doSlideshow(){
     .fadeIn(2000,function(){
         setTimeout(doSlideshow,5000);
     });
-    console.log('background-image','url("images/bg'+nextimage+'.jpg")');
+    // console.log('background-image','url("images/bg'+nextimage+'.jpg")');
     nextimage++;
     $('header')
     .css('background-size','cover');
