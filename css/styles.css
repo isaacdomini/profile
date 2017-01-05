@@ -12,6 +12,7 @@ body {
 }
 main {
   flex: 1 0 auto;
+  clear:both;
 }
 header{
   color: white;
@@ -22,12 +23,10 @@ header{
   -o-transition: background 2s ease-out;
 }
 footer{
-  padding: 20px;
-  min-height :20vh;
-  background-color: #FF5252;
+  min-height :10vh;
+  background-color: #607d8b;
 }
 #toplogo{
-  padding
   max-height: 100px;
 }
 #cgoup{
