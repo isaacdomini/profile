@@ -1,5 +1,7 @@
 deploy:
   provider: npm
+  on:
+    branch: release
 before_script:
   - npm install -g firebase-tools
 script: firebase deploy
