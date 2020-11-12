@@ -25,8 +25,12 @@ map.on('load', function () {
       // el.style.width = '70' + 'px';
       // el.style.height = '70' + 'px';
       // el.style.borderRadius = '50%'
-      el.addEventListener('click', function () {
-        $(`#${person.id}`).modal()
+      el.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if($(`#${person.id}-sticky`).is(":hidden")){
+          $(".sticky-profile").hide(400);
+          $(`#${person.id}-sticky`).show(400);
+        }
       });
         
       // add marker to map
@@ -37,19 +41,12 @@ map.on('load', function () {
       if(person.alias){
         return
       }
-        
-      $('body')
-        .append(
-          $(`<div id="${gperson.id}" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="${gperson.id}Label" aria-hidden="true">`)
-            .append(`<div class="modal-dialog modal-lg">`)
-            .append(`<div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="${gperson.id}Label">${gperson.name} - ${gperson.job}</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
+      $('body').append(
+        $(`<div id="${gperson.id}-sticky" class="sticky-profile">`)
+          .append(`<div >`)
+          .append(`<div class="profile-content">
             <div class="modal-body">
+              <h4 class="" id="${gperson.id}title">${gperson.name} - ${gperson.job}</h4>
               <img src="images/${gperson.pic_path}" class="profile">
               <h5>Favorite Memory</h5>
               <p>${gperson.fav_memory}</p>
@@ -68,11 +65,43 @@ map.on('load', function () {
               <span id="${gperson.id}-images5"></span>
               <span id="${gperson.id}-images6"></span>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>`)
-        );
+          </div>`) 
+      );
+      // $('#main-content')
+      //   .append(
+      //     $(`<div id="${gperson.id}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="${gperson.id}Label" aria-hidden="true">`)
+      //       .append(`<div class="modal-dialog  modal-sm">`)
+      //       .append(`<div class="modal-content">
+      //       <div class="modal-header">
+      //         <h4 class="modal-title" id="${gperson.id}Label">${gperson.name} - ${gperson.job}</h4>
+      //         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      //           <span aria-hidden="true">&times;</span>
+      //         </button>
+      //       </div>
+      //       <div class="modal-body">
+      //         <img src="images/${gperson.pic_path}" class="profile-content">
+      //         <h5>Favorite Memory</h5>
+      //         <p>${gperson.fav_memory}</p>
+      //         <span id="${gperson.id}-images1"></span>
+      //         <h5>How do you celebrate Diwali?</h5>
+      //         <p>${gperson.celebrate}</p>
+      //         <span id="${gperson.id}-images2"></span>
+      //         <h5>Food you like </h5>
+      //         <p>${gperson.food}</p>
+      //         <span id="${gperson.id}-images3"></span>
+      //         <h5>Your Diwali Traditions</h5>
+      //         <p>${gperson.traditions}</p>
+      //         <span id="${gperson.id}-images4"></span>
+      //         <h5>What does Diwali mean to you?</h5>
+      //         <p>${gperson.diwali_meaning}</p>
+      //         <span id="${gperson.id}-images5"></span>
+      //         <span id="${gperson.id}-images6"></span>
+      //       </div>
+      //       <div class="modal-footer">
+      //         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      //       </div>
+      //     </div>`)
+      //   );
       var i =0;
       for (i = 0; i < 6; i++) {
         if(person.pic_other_paths.length > i) {
@@ -85,4 +114,7 @@ map.on('load', function () {
 });
 
 
+map.on('click', function (e) {
+  $(".sticky-profile").hide(400);
+});
 map.scrollZoom.disable();
