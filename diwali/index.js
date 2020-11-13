@@ -1,3 +1,33 @@
+console.log(    
+`
+
+ _________ __                                    
+/   _____//  |_  ____ ______                     
+\\_____  \\\\   __\\/  _ \\\\____ \\                    
+/        \\|  | (  <_> )  |_> >                   
+/_______  /|__|  \\____/|   __/                    
+       \\/             |__|                       
+.____                  __   .__                   
+|    |    ____   ____ |  | _|__| ____    ____     
+|    |   /  _ \\ /  _ \\|  |/ /  |/    \\  / ___\\    
+|    |__(  <_> |  <_> )    <|  |   |  \\/ /_/  >   
+|_______ \\____/ \\____/|__|_ \\__|___|  /\\___  /    
+       \\/                 \\/       \\//_____/     
+  _____   __      __  .__                        
+ /  _  \\_/  |_  _/  |_|  |__   ____              
+/  /_\\  \\   __\\ \\   __\\  |  \\_/ __ \\             
+/    |    \\  |    |  | |   Y  \\  ___/             
+\\____|__  /__|    |__| |___|  /\\___  >            
+       \\/                  \\/     \\/             
+_________                            .__          
+\\_   ___ \\  ____   ____   __________ |  |   ____  
+/    \\  \\/ /  _ \\ /    \\ /  ___/  _ \\|  | _/ __ \\ 
+\\     \\___(  <_> )   |  \\\\___ (  <_> )  |_\\  ___/ 
+\\______  /\\____/|___|  /____  >____/|____/\\___  >
+       \\/            \\/     \\/                \\/ 
+
+`
+)
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWRvbWluaSIsImEiOiJjazNyZXViZGEwYnQ1M2Vyd3RvdjIwOHRsIn0.-9PrntkPoS_LMcljXRQyGA';
 var gperson = {};
 var map = new mapboxgl.Map({
@@ -12,10 +42,10 @@ map.on('load', function () {
   var json = undefined
   $.getJSON("data.json", function(data) {
     json = data
-    console.log(json); // this will show the info it in firebug console
+    // console.log(json); // this will show the info it in firebug console
     json.forEach(person => {
       gperson = person
-      console.log(person)
+      // console.log(person)
 
       // create a DOM element for the marker
       var el = document.createElement('div');
@@ -105,7 +135,7 @@ map.on('load', function () {
       var i =0;
       for (i = 0; i < 6; i++) {
         if(person.pic_other_paths.length > i) {
-          console.log(`${person.id}-images${i+1}`)
+          // console.log(`${person.id}-images${i+1}`)
           $(`#${person.id}-images${i+1}`).append(`<img src="images/${person.pic_other_paths[i]}" class="profile"></img>`)
         }
       }
