@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Verse Voice Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .pulse {
+            animation: pulse-animation 1.5s infinite;
+        }
+        @keyframes pulse-animation {
+            0% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(239, 68, 68, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 sm:p-8 space-y-6">
+        <!-- Header -->
+        <div class="text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white">Bible Verse Voice Search</h1>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">Say a verse reference like "John 3:16"</p>
+        </div>
+
+        <!-- Control Button and Status -->
+        <div class="flex flex-col items-center justify-center space-y-4">
+            <button id="toggle-listen-btn" class="px-8 py-4 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300 ease-in-out text-lg">
+                Start Listening
+            </button>
+            <p id="status" class="text-sm text-gray-500 dark:text-gray-400 h-5">Press the button to start.</p>
+        </div>
+
+        <!-- Transcript Display -->
+        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg min-h-[60px]">
+            <h3 class="font-semibold text-gray-600 dark:text-gray-300 mb-1">What I heard:</h3>
+            <p id="transcript" class="text-gray-800 dark:text-gray-200 italic">...</p>
+        </div>
+
+        <!-- Verse Display -->
+        <div id="verse-container" class="bg-blue-50 dark:bg-gray-700/50 p-6 rounded-lg border-l-4 border-blue-500 min-h-[100px]">
+             <h2 id="verse-reference" class="text-xl font-bold text-blue-800 dark:text-blue-300 mb-2">Verse will appear here...</h2>
+             <p id="verse-text" class="text-gray-700 dark:text-gray-300 leading-relaxed"></p>
+        </div>
+
+    </div>
+
+    <script>
+        // DOM element references
+        const toggleBtn = document.getElementById('toggle-listen-btn');
+        const statusEl = document.getElementById('status');
+        const transcriptEl = document.getElementById('transcript');
+        const verseReferenceEl = document.getElementById('verse-reference');
+        const verseTextEl = document.getElementById('verse-text');
+        const verseContainer = document.getElementById('verse-container');
+
+        // Check for browser support for the Web Speech API
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        let recognition;
+
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
+            recognition.continuous = true; // Keep listening even after a pause
+            recognition.interimResults = true; // Get results as they are being recognized
+            recognition.lang = 'en-US';
+
+            let isListening = false;
+            let lastFetchedReference = '';
+
+            // --- Speech Recognition Event Handlers ---
+
+            recognition.onstart = () => {
+                isListening = true;
+                statusEl.textContent = 'Listening...';
+                toggleBtn.textContent = 'Stop Listening';
+                toggleBtn.classList.add('bg-red-600', 'hover:bg-red-700', 'pulse');
+                toggleBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            };
+
+            recognition.onend = () => {
+                isListening = false;
+                statusEl.textContent = 'Press the button to start.';
+                toggleBtn.textContent = 'Start Listening';
+                toggleBtn.classList.remove('bg-red-600', 'hover:bg-red-700', 'pulse');
+                toggleBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                statusEl.textContent = `Error: ${event.error}`;
+            };
+
+            recognition.onresult = (event) => {
+                let interimTranscript = '';
+                let finalTranscript = '';
+
+                for (let i = event.resultIndex; i < event.results.length; ++i) {
+                    if (event.results[i].isFinal) {
+                        finalTranscript += event.results[i][0].transcript;
+                    } else {
+                        interimTranscript += event.results[i][0].transcript;
+                    }
+                }
+                
+                // Display what's being heard
+                transcriptEl.textContent = finalTranscript || interimTranscript;
+
+                // Process the final transcript to find a verse
+                if (finalTranscript.trim()) {
+                    findAndFetchVerse(finalTranscript.trim());
+                }
+            };
+
+            // --- Main Logic Functions ---
+
+            const findAndFetchVerse = (text) => {
+                // Regex to capture book names (e.g., "1 John", "Song of Solomon"), chapter, and verse.
+                // It handles formats like "John 3 16", "John 3:16", "1 Corinthians 13 4".
+                const verseRegex = /(\d?\s?[a-zA-Z]+(?:\s[of\sA-Za-z]+)?)\s+(\d+)\s*:?\s*(\d+)/i;
+                const match = text.match(verseRegex);
+
+                if (match) {
+                    const book = match[1].trim();
+                    const chapter = match[2].trim();
+                    const verse = match[3].trim();
+                    const reference = `${book} ${chapter}:${verse}`;
+                    
+                    // Avoid re-fetching the same verse repeatedly from a long transcript
+                    if (reference.toLowerCase() !== lastFetchedReference.toLowerCase()) {
+                        lastFetchedReference = reference;
+                        fetchVerse(book, chapter, verse);
+                    }
+                }
+            };
+
+            const fetchVerse = async (book, chapter, verse) => {
+                const apiUrl = `https://bible-api.com/${book}+${chapter}:${verse}`;
+                statusEl.textContent = `Searching for ${book} ${chapter}:${verse}...`;
+                
+                try {
+                    const response = await fetch(apiUrl);
+                    if (!response.ok) {
+                        throw new Error(`Verse not found or API error.`);
+                    }
+                    const data = await response.json();
+                    
+                    displayVerse(data);
+                    statusEl.textContent = 'Listening...'; // Reset status after successful fetch
+
+                } catch (error) {
+                    console.error('API Error:', error);
+                    displayError(`Could not find "${book} ${chapter}:${verse}". Please try again.`);
+                    statusEl.textContent = 'Listening...'; // Reset status after error
+                }
+            };
+            
+            const displayVerse = (data) => {
+                verseReferenceEl.textContent = data.reference;
+                verseTextEl.textContent = data.text.replace(/\n/g, ' '); // Clean up newlines
+            };
+
+            const displayError = (message) => {
+                verseReferenceEl.textContent = 'Error';
+                verseTextEl.textContent = message;
+            };
+
+            // --- Event Listener for the Button ---
+
+            toggleBtn.addEventListener('click', () => {
+                if (isListening) {
+                    recognition.stop();
+                } else {
+                    recognition.start();
+                }
+            });
+
+        } else {
+            // Handle case where the browser doesn't support the API
+            statusEl.textContent = "Sorry, your browser doesn't support the Web Speech API.";
+            toggleBtn.disabled = true;
+            toggleBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+
+    </script>
+</body>
+</html>
