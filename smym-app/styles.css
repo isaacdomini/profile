@@ -1,0 +1,227 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-body: #111827; /* bg-gray-900 */
+    --bg-container: #1f2937; /* bg-gray-800 */
+    --text-main: #f3f4f6; /* text-gray-100 */
+    --text-accent: #facc15; /* text-yellow-400 */
+    --btn-primary: #eab308; /* bg-yellow-500 */
+    --btn-primary-hover: #ca8a04; /* bg-yellow-600 */
+    --btn-secondary: #2563eb; /* bg-blue-600 */
+    --btn-secondary-hover: #1d4ed8; /* bg-blue-700 */
+    --gradient-start: #fbbf24;
+    --gradient-end: #f59e0b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--bg-container);
+    max-width: 600px;
+    width: 100%;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+.logo-accent {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+/* Main Content */
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-accent);
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-main);
+    border-bottom: 2px solid var(--bg-body);
+    padding-bottom: 8px;
+}
+
+.lead {
+    font-size: 1.125rem;
+    margin-bottom: 16px;
+    color: #d1d5db; /* text-gray-300 */
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+/* Features */
+.features ul {
+    list-style-type: none;
+}
+
+.features li {
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.features li::before {
+    content: "•";
+    color: var(--text-accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Downloads */
+.downloads {
+    text-align: center;
+}
+
+.download-option {
+    margin-bottom: 24px;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.download-option.visible {
+    display: block;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 320px;
+    font-size: 1.1rem;
+    gap: 12px;
+}
+
+.btn-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary);
+    color: #111827; /* Dark text on yellow button */
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-android {
+    background-color: var(--btn-secondary); /* Blue for Android/Secondary */
+    color: white;
+}
+
+.btn-android:hover {
+    background-color: var(--btn-secondary-hover);
+}
+
+.device-note {
+    font-size: 0.875rem;
+    color: var(--text-accent);
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* Instructions */
+.instructions {
+    background-color: var(--bg-body);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+    border: 1px solid #374151;
+}
+
+.instructions h4 {
+    color: var(--text-accent);
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.instructions ol {
+    padding-left: 20px;
+    color: #d1d5db;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #9ca3af;
+    border-top: 1px solid #374151;
+    padding-top: 24px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 24px;
+    }
+    
+    .logo-text {
+        font-size: 1.75rem;
+    }
+}
