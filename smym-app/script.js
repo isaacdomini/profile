@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const iosContainer = document.getElementById('ios-container');
     const androidContainer = document.getElementById('android-container');
     const androidInstructions = document.getElementById('android-instructions');
+    const webContainer = document.getElementById('web-container');
     
     // Detection Logic
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
@@ -22,9 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
         androidBtn.classList.remove('btn-android'); // Remove blue
         androidBtn.classList.add('btn-primary'); // Add yellow
     } else {
-        // Desktop or other: Show both
+        // Desktop or other: Show both and web link
         iosContainer.classList.add('visible');
         androidContainer.classList.add('visible');
+        webContainer.classList.add('visible');
         
         // Hide "Recommended for your device" text on desktop
         const notes = document.querySelectorAll('.device-note');
@@ -94,6 +96,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 event: 'download_click', 
                 platform: 'android',
                 url: androidBtn.href
+            });
+        });
+    }
+
+    const webBtn = webContainer.querySelector('a');
+    if (webBtn) {
+        webBtn.addEventListener('click', () => {
+            logVisit('/web-redirect', { 
+                event: 'web_click', 
+                url: webBtn.href
             });
         });
     }
