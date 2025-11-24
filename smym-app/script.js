@@ -35,6 +35,23 @@ document.addEventListener('DOMContentLoaded', function() {
         // Keep Android button blue (secondary) to distinguish from iOS button
     }
 
+    // "See Other Ways to Play" Logic
+    const showAllContainer = document.getElementById('show-all-options-container');
+    const showAllBtn = document.getElementById('show-all-btn');
+
+    if (isIOS || isAndroid) {
+        showAllContainer.classList.add('visible');
+    }
+
+    if (showAllBtn) {
+        showAllBtn.addEventListener('click', () => {
+            iosContainer.classList.add('visible');
+            androidContainer.classList.add('visible');
+            webContainer.classList.add('visible');
+            showAllContainer.style.display = 'none'; // Hide the button itself
+        });
+    }
+
     // Logging Logic
     const LOG_API_URL = 'https://youth.columbuschurch.org/api/log-visit';
 
