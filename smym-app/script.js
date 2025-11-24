@@ -10,22 +10,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
     const isAndroid = /android/i.test(userAgent);
 
+    // Hide "Recommended for your device" text on ALL devices by default
+    const notes = document.querySelectorAll('.device-note');
+    notes.forEach(note => note.style.display = 'none');
+
     if (isIOS) {
         // Show iOS only
         iosContainer.classList.add('visible');
         
-        // Hide "Recommended for your device" on Android container
-        const androidNote = androidContainer.querySelector('.device-note');
-        if (androidNote) androidNote.style.display = 'none';
+        // Show "Recommended" for iOS
+        const iosNote = iosContainer.querySelector('.device-note');
+        if (iosNote) iosNote.style.display = 'block';
         
     } else if (isAndroid) {
         // Show Android only and instructions
         androidContainer.classList.add('visible');
         androidInstructions.classList.remove('hidden');
         
-        // Hide "Recommended for your device" on iOS container
-        const iosNote = iosContainer.querySelector('.device-note');
-        if (iosNote) iosNote.style.display = 'none';
+        // Show "Recommended" for Android
+        const androidNote = androidContainer.querySelector('.device-note');
+        if (androidNote) androidNote.style.display = 'block';
         
         // Update the button style to be primary yellow for the main action on this device
         const androidBtn = androidContainer.querySelector('.btn');
@@ -37,9 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         androidContainer.classList.add('visible');
         webContainer.classList.add('visible');
         
-        // Hide "Recommended for your device" text on desktop
-        const notes = document.querySelectorAll('.device-note');
-        notes.forEach(note => note.style.display = 'none');
+        // Keep notes hidden (default state)
         
         // Keep Android button blue (secondary) to distinguish from iOS button
     }
