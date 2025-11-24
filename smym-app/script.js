@@ -32,4 +32,69 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Keep Android button blue (secondary) to distinguish from iOS button
     }
+
+    // Logging Logic
+    const LOG_API_URL = 'https://youth.columbuschurch.org/api/log-visit';
+
+    // Fetch IP once and reuse
+    const ipPromise = fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => data.ip)
+        .catch(err => {
+            console.warn('Failed to fetch IP:', err);
+            return null;
+        });
+
+    async function logVisit(path, metadata = {}) {
+        try {
+            const ip = await ipPromise;
+
+            const body = {
+                path: path,
+                appName: 'SMYM-Landing-Page',
+                userAgent: userAgent, // Explicitly sending UA as per spec, though browser sends it anyway
+                metadata: metadata
+            };
+
+            if (ip) {
+                body.ip = ip;
+            }
+
+            await fetch(LOG_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
+        } catch (error) {
+            console.error('Failed to log visit:', error);
+        }
+    }
+
+    // Log initial page visit
+    logVisit('/home', { event: 'page_view' });
+
+    // Log Download Clicks
+    const iosBtn = iosContainer.querySelector('a');
+    if (iosBtn) {
+        iosBtn.addEventListener('click', () => {
+            logVisit('/download', { 
+                event: 'download_click', 
+                platform: 'ios',
+                url: iosBtn.href
+            });
+        });
+    }
+
+    const androidBtn = androidContainer.querySelector('a');
+    if (androidBtn) {
+        androidBtn.addEventListener('click', () => {
+            logVisit('/download', { 
+                event: 'download_click', 
+                platform: 'android',
+                url: androidBtn.href
+            });
+        });
+    }
 });
