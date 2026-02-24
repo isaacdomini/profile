@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const iosContainer = document.getElementById('ios-container');
     const androidContainer = document.getElementById('android-container');
-    const androidInstructions = document.getElementById('android-instructions');
     const webContainer = document.getElementById('web-container');
     
     // Detection Logic
@@ -23,9 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (iosNote) iosNote.style.display = 'block';
         
     } else if (isAndroid) {
-        // Show Android only and instructions
+        // Show Android only
         androidContainer.classList.add('visible');
-        androidInstructions.classList.remove('hidden');
         
         // Show "Recommended" for Android
         const androidNote = androidContainer.querySelector('.device-note');
